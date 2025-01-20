@@ -42,7 +42,10 @@ El balanceo de carga es la manera en que las peticiones de Internet son distribu
 
 ### Preparación
 
-Para realizar un ejemplo usaré el servidor que he creado para el ejemplo anterios tal como lo he dejado, otro servidor nginx configurado muy parecido al otro pero cambiando el contenido de la página para diferenciarlo y por último otro servidor que se encargará del balanceo de carga y configuraremos adelante.
+Para realizar un ejemplo usaré el servidor que he creado para el ejemplo anterior tal como lo he dejado, otro servidor nginx configurado muy parecido al otro pero cambiando el contenido de la página para diferenciarlo y por último otro servidor que se encargará del balanceo de carga y configuraremos adelante.
+
+Configuró los servidores de la siguiente manera:
+![configuracion](/imagenes/configuracion.PNG)
 
 
 Está es la página de mi segundo servidor:

@@ -5,7 +5,7 @@ Para saber que versión de nginx tenemos instalada solo tenemos que escribir el 
 
 ![version](/imagenes/version.PNG)
 
-##Servicio Asociado
+## Servicio Asociado
 El servicio asociado es:
 
 ![directorio](/imagenes/servicio.PNG)

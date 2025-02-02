@@ -108,11 +108,7 @@ En web1, el directorio privado tiene una configuración especial:
 *   **Desde la red externa**: Se requiere autenticación.
     
 *   **Desde la red interna**: Acceso libre sin necesidad de autenticación.
-    
 
-1.  **Modificar nuevamente los archivos en sites-available**
-    
-    *   Aplicar las reglas correspondientes para diferenciar el acceso según la red.
         
 ## SEGURIDAD
 

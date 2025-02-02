@@ -43,6 +43,13 @@ El balanceo de carga es la manera en que las peticiones de Internet son distribu
 ![resultado1](/imagenes/web1.PNG)
 ![resultado1](/imagenes/web2.PNG)
 
+Configuración del archivo hosts para las webs:
+
+![resultado1](/imagenes/hosts.PNG)
+
+Resultado final
+
+![resultado1](/imagenes/resultado1.PNG)
 
 ## AUTENTICACIÓN, AUTORIZACIÓN Y CONTROL DE ACCESO
 

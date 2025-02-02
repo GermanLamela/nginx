@@ -40,6 +40,8 @@ Cuando lo guardemos, ya se habrán aplicado los cambios a la página web.
 Una definición sencilla de lo que es el balanceo de carga sería la siguiente:
 El balanceo de carga es la manera en que las peticiones de Internet son distribuídas sobre una fila de servidores.
 
+![resultado1](/imagenes/web1.PNG)
+![resultado1](/imagenes/web2.PNG)
 
 
 ## AUTENTICACIÓN, AUTORIZACIÓN Y CONTROL DE ACCESO

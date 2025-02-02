@@ -58,7 +58,7 @@ El acceso a las webs se configura de la siguiente manera:
 *   **Web1**: Disponible tanto desde la red interna como externa.
     
 *   **Web2**: Solo accesible desde la red interna.
-    
+    ![resultado1](/imagenes/controlacceso.PNG)
 
 Para aplicar estas restricciones, se deben realizar los siguientes cambios:
 
@@ -69,6 +69,7 @@ Para aplicar estas restricciones, se deben realizar los siguientes cambios:
 2.  **Actualizar el archivo hosts con las IPs permitidas**
     
     *   Definir las direcciones IP autorizadas tanto para la red interna como externa.
+      ![resultado1](/imagenes/modificacionhosts.PNG)
         
 3.  **Verificación del acceso desde la red interna**
     
@@ -77,7 +78,7 @@ Para aplicar estas restricciones, se deben realizar los siguientes cambios:
 4.  **Verificación del acceso desde la red externa**
     
     *   Confirmar que la web2 no es accesible desde el exterior.
-        
+        ![resultado1](/imagenes/paginaprohibida.PNG)
 
 ## AUTENTICACIÓN, AUTORIZACIÓN Y CONTROL DE ACCESO
 
@@ -114,3 +115,4 @@ En web1, el directorio privado tiene una configuración especial:
 Para reforzar la seguridad en web1, se implementará el acceso seguro mediante HTTPS.
 
 1.  **Generar una clave privada y un certificado autofirmado**
+![image](https://github.com/user-attachments/assets/64442a44-08ff-45d1-bd59-652f14b27ce2)

@@ -40,40 +40,68 @@ Cuando lo guardemos, ya se habrán aplicado los cambios a la página web.
 Una definición sencilla de lo que es el balanceo de carga sería la siguiente:
 El balanceo de carga es la manera en que las peticiones de Internet son distribuídas sobre una fila de servidores.
 
-### Preparación
-
-Para realizar un ejemplo usaré el servidor que he creado para el ejemplo anterior tal como lo he dejado, otro servidor nginx configurado muy parecido al otro pero cambiando el contenido de la página para diferenciarlo y por último otro servidor que se encargará del balanceo de carga y configuraremos adelante.
-
-Configuró los servidores de la siguiente manera:
-![configuracion](/imagenes/configuracion.PNG)
 
 
-Está es la página de mi segundo servidor:
-![resultado2](/imagenes/resultado2.PNG)
+## AUTENTICACIÓN, AUTORIZACIÓN Y CONTROL DE ACCESO
 
-### Configuración del servidor de balanceo de carga
+El acceso a las webs se configura de la siguiente manera:
 
-Para la configuración del servidor de balanceo de carga instalamos nginx.
-Una vez hecho esto borraremos el sitio activado por defecto  y crearemos un archivo con la ruta y el nombre indicado en la siguiente imagen.
+*   **Web1**: Disponible tanto desde la red interna como externa.
+    
+*   **Web2**: Solo accesible desde la red interna.
+    
 
-![balanceo1](/imagenes/balanceo1.PNG)
+Para aplicar estas restricciones, se deben realizar los siguientes cambios:
 
-Dentro del archivo nuevo creado tenemos que introducir lo siguiente teniendo en cuenta los siguiente puntos:
-- upstream backend nos deja introducir los servidores de las páginas web a través de las ips perteneciente a la red interna. Tenemos que indicar el modo de balance que vas a utilizar, he escogido 'ip_hash' que permite persistir en la sesión.
--En el apartado de server tienes que especificar las ips de los servidores.
+1.  **Modificar los archivos en sites-available**
+    
+    *   Ajustar la configuración de cada sitio en sites-available.
+        
+2.  **Actualizar el archivo hosts con las IPs permitidas**
+    
+    *   Definir las direcciones IP autorizadas tanto para la red interna como externa.
+        
+3.  **Verificación del acceso desde la red interna**
+    
+    *   Usar curl para comprobar la accesibilidad interna.
+        
+4.  **Verificación del acceso desde la red externa**
+    
+    *   Confirmar que la web2 no es accesible desde el exterior.
+        
 
-![balanceo1](/imagenes/loadbalancing.PNG)
+## AUTENTICACIÓN, AUTORIZACIÓN Y CONTROL DE ACCESO
 
-### Comprobación
+En web1.org, existe un directorio privado que solo puede ser accedido por usuarios autenticados.
 
-Para comprobar que los fichero no tienen errores de sintaxis o fallos en la configuración escribimos el comando **nginx -t**
+1.  **Actualizar nuevamente sites-available**
+    
+    *   Configurar el directorio privado dentro del archivo de configuración.
+        
+2.  **Comprobar que web1.org/privado solicita autenticación**
+    
+    *   Acceder al directorio para confirmar que se requiere un usuario válido.
+        
+3.  **Verificar que el acceso autenticado funciona correctamente**
+    
+    *   Iniciar sesión y comprobar el acceso exitoso.
+        
 
-![comprobacion](/imagenes/comprobacion.PNG)
+## AUTENTICACIÓN, AUTORIZACIÓN Y CONTROL DE ACCESO
 
-Si aquí no hay problemas, reiniciamos el servicio de nginx con **systemctl restart nginx.servide**
+En web1, el directorio privado tiene una configuración especial:
 
-Finalmente nos vamos al buscador e introducimos la ip del servidor de balanceo y nos llevará a nuestra primera página, si esperamos un poco y volvemos a cargar podremos ver que nos abre la segunda página.
+*   **Desde la red externa**: Se requiere autenticación.
+    
+*   **Desde la red interna**: Acceso libre sin necesidad de autenticación.
+    
 
-![server1](/imagenes/server1.PNG)
+1.  **Modificar nuevamente los archivos en sites-available**
+    
+    *   Aplicar las reglas correspondientes para diferenciar el acceso según la red.
+        
+## SEGURIDAD
 
-![server2](/imagenes/server2.PNG)
+Para reforzar la seguridad en web1, se implementará el acceso seguro mediante HTTPS.
+
+1.  **Generar una clave privada y un certificado autofirmado**

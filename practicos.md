@@ -21,6 +21,10 @@ Hay muchos directorios y archivos aquí pero lo que voy a tomar en cuenta es:
 - **sites-available** que es el directorio donde se almacenan los sitios virtuales y donde por defecto ya tenemos uno creado.
 - **sites-enabled** que el directorio donde se almacenan los sitios que tenemos activos actualmente y donde por defecto ya tenemos uno.
 
+  '''bash
+      openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/selfigned.key -out /etc/ssl/certs/selfsigned.crt
+  '''
+
 ## Página web por defecto
 
 Al instalar nginx se nos crea una página web por defecto en /var/www/html y sirve para ver si funciona y se ha instalado correctamente.
